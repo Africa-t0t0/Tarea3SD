@@ -40,7 +40,7 @@ def addproduct():
     conn.commit()
     # Close connection
     conn.close()
-    return "<p>Product added</p>"
+    return "<p>Product added</p> "+ str(os.getpid())
 
 
 @app.route("/getproducts/<product>", methods=["GET"])
