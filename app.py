@@ -57,7 +57,7 @@ def getproducts(product):
     # Get cursor
     cur = conn.cursor()
 
-    query = ("SELECT name FROM products WHERE name LIKE %s")
+    query = ("SELECT name, value FROM products WHERE name LIKE %s")
     # Execute query
     cur.execute(query, (product,))
 
