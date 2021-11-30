@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+    postgresql-master:
+        ports:
+            - '55432:5432'
+        container_name: postgresql-master
+        environment:
+            - POSTGRESQL_REPLICATION_MODE=master
+            - POSTGRESQL_USERNAME=user1
+            - POSTGRESQL_PASSWORD=password1
+            - POSTGRESQL_DATABASE=my_database
+            - POSTGRESQL_REPLICATION_USER=user2
+            - POSTGRESQL_REPLICATION_PASSWORD=password2
+        image: bitnami/postgresql:latest
+    
+    postgresql-slave:
+        ports:
+            - '65432:5432'
+        container_name: postgresql-slave
+        links:
+            - postgresql-master:master
+        environment:
+            - POSTGRESQL_REPLICATION_MODE=slave
+            - POSTGRESQL_USERNAME=user2
+            - POSTGRESQL_PASSWORD=password2
+            - POSTGRESQL_MASTER_HOST=master
+            - POSTGRESQL_MASTER_PORT_NUMBER=5432
+            - POSTGRESQL_REPLICATION_USER=user2
+            - POSTGRESQL_REPLICATION_PASSWORD=password2
+        image: bitnami/postgresql:latest
