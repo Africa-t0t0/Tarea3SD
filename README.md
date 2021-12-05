@@ -43,8 +43,9 @@ sudo apt install nginx
 ```
     - Por defecto, no se permite realizar consultas a la base de dato slave, es necesario utilizar el comando "GRANT SELECT ON products TO PUBLIC;"
  ```
- comandos para probar en terminal:
+ ###Comandos para probar en terminal:
+ ```
     post: curl -X POST -F 'name=pantalla' -F 'value=43532234' http://localhost:8080/addproduct/
     get: curl -X GET http://localhost:8080/getproducts/pantalla
-
+```
   
