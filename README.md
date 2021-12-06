@@ -1,9 +1,9 @@
-# Tarea 3 Sistemas Distribuidos.
-
-Integrantes:
+# Integrantes:
 -Francisca Carrasco
 -Elizabeth Pareja
 -Jorge Ramirez
+
+# Tarea 3 Sistemas Distribuidos.
 
 Este tutorial contempla la instalación de nginx desde UBUNTU.
 
